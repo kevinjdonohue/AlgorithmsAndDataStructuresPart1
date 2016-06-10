@@ -11,17 +11,17 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void NodeChainExample()
         {
             //arrange
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
-            LinkedListNode middle = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
+            SinglyLinkedListNode middle = new SinglyLinkedListNode() { Value = 5 };
             first.Next = middle;
-            LinkedListNode last = new LinkedListNode() { Value = 7 };
+            SinglyLinkedListNode last = new SinglyLinkedListNode() { Value = 7 };
             middle.Next = last;
 
             //act
             PrintList(first);
         }
 
-        private void PrintList(LinkedListNode linkedListNode)
+        private void PrintList(SinglyLinkedListNode linkedListNode)
         {
             while (linkedListNode != null)
             {

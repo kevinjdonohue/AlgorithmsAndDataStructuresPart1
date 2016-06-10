@@ -2,20 +2,20 @@
 
 namespace AlgorithmsAndDataStructuresPart1
 {
-    public class LinkedList
+    public class SinglyLinkedList
     {
-        public LinkedListNode Head { get; set; }
-        public LinkedListNode Tail { get; set; }
+        public SinglyLinkedListNode Head { get; set; }
+        public SinglyLinkedListNode Tail { get; set; }
         public int Count { get; set; }
 
         public void AddFirst(int value)
         {
-            AddFirst(new LinkedListNode() { Value = value });
+            AddFirst(new SinglyLinkedListNode() { Value = value });
         }
 
-        public void AddFirst(LinkedListNode node)
+        public void AddFirst(SinglyLinkedListNode node)
         {
-            LinkedListNode temp = Head;
+            SinglyLinkedListNode temp = Head;
             Head = node;
             Head.Next = temp;
             Count++;
@@ -28,10 +28,10 @@ namespace AlgorithmsAndDataStructuresPart1
 
         public void AddLast(int value)
         {
-            AddLast(new LinkedListNode() { Value = value });
+            AddLast(new SinglyLinkedListNode() { Value = value });
         }
 
-        public void AddLast(LinkedListNode node)
+        public void AddLast(SinglyLinkedListNode node)
         {
             if (Count == 0)
             {
@@ -58,7 +58,7 @@ namespace AlgorithmsAndDataStructuresPart1
 
             if (Count > 1)
             {
-                LinkedListNode temp = Head;
+                SinglyLinkedListNode temp = Head;
 
                 while (temp.Next != Tail)
                 {
@@ -91,7 +91,7 @@ namespace AlgorithmsAndDataStructuresPart1
 
         public IEnumerator GetEnumerator()
         {
-            LinkedListNode current = Head;
+            SinglyLinkedListNode current = Head;
 
             while (current != null)
             {

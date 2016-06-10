@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinkedList.cs" />
-    <Compile Include="LinkedListNode.cs" />
+    <Compile Include="SinglyLinkedList.cs" />
+    <Compile Include="SinglyLinkedListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

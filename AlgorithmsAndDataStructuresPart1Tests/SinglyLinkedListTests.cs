@@ -7,14 +7,14 @@ using System.Collections;
 namespace AlgorithmsAndDataStructuresPart1Tests
 {
     [TestFixture]
-    public class LinkedListTests
+    public class SinglyLinkedListTests
     {
         [Test]
         public void GivenAnEmptyLinkedList_ShouldAddNodeAsTheHeadAndTail()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
 
             //act
             linkedList.AddFirst(first);
@@ -32,10 +32,10 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenAnEmptyLinkedList_ShouldAddNodeAsTheTailAndHead()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
+            SinglyLinkedList linkedList = new SinglyLinkedList();
 
             //act
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddLast(first);
 
             //assert
@@ -51,12 +51,12 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithOneNode_ShouldAddANodeAsTheHead()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(first);
 
             //act
-            LinkedListNode second = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode second = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddFirst(second);
 
             //assert
@@ -72,14 +72,14 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithOneNode_ShouldAddTwoNodes()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(first);
 
             //act
-            LinkedListNode second = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode second = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddFirst(second);
-            LinkedListNode third = new LinkedListNode() { Value = 7 };
+            SinglyLinkedListNode third = new SinglyLinkedListNode() { Value = 7 };
             linkedList.AddFirst(third);
 
             //assert
@@ -95,12 +95,12 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithOneNode_ShouldAddANodeAsTheTail()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode first = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode first = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(first);
 
             //act
-            LinkedListNode second = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode second = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddLast(second);
 
             //assert
@@ -115,8 +115,8 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithOneNode_ShouldRemoveTheFirstNode_MakingTheListEmpty()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
 
             //act
@@ -132,10 +132,10 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithTwoNodes_ShouldRemoveTheFirstNode()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
-            LinkedListNode secondLinkedListNode = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode secondLinkedListNode = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddLast(secondLinkedListNode);
 
             //act
@@ -151,12 +151,12 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithThreeNodes_ShouldRemoveTheFirstNode()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
-            LinkedListNode secondLinkedListNode = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode secondLinkedListNode = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddLast(secondLinkedListNode);
-            LinkedListNode thirdLinkedListNode = new LinkedListNode() { Value = 7 };
+            SinglyLinkedListNode thirdLinkedListNode = new SinglyLinkedListNode() { Value = 7 };
             linkedList.AddLast(thirdLinkedListNode);
 
             //act
@@ -174,8 +174,8 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithOneNode_ShouldRemoveTheLastNode_MakingTheListEmpty()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
 
             //act
@@ -191,12 +191,12 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithThreeNodes_ShouldRemoveTheLastNode()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
-            LinkedListNode secondLinkedListNode = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode secondLinkedListNode = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddLast(secondLinkedListNode);
-            LinkedListNode thirdLinkedListNode = new LinkedListNode() { Value = 7 };
+            SinglyLinkedListNode thirdLinkedListNode = new SinglyLinkedListNode() { Value = 7 };
             linkedList.AddLast(thirdLinkedListNode);
 
             linkedList.Head.Value.Should().Be(firstLinkedListNode.Value);
@@ -219,12 +219,12 @@ namespace AlgorithmsAndDataStructuresPart1Tests
         public void GivenALinkedListWithThreeNodes_ShouldEnumerateOverTheList()
         {
             //arrange
-            LinkedList linkedList = new LinkedList();
-            LinkedListNode firstLinkedListNode = new LinkedListNode() { Value = 3 };
+            SinglyLinkedList linkedList = new SinglyLinkedList();
+            SinglyLinkedListNode firstLinkedListNode = new SinglyLinkedListNode() { Value = 3 };
             linkedList.AddFirst(firstLinkedListNode);
-            LinkedListNode secondLinkedListNode = new LinkedListNode() { Value = 5 };
+            SinglyLinkedListNode secondLinkedListNode = new SinglyLinkedListNode() { Value = 5 };
             linkedList.AddLast(secondLinkedListNode);
-            LinkedListNode thirdLinkedListNode = new LinkedListNode() { Value = 7 };
+            SinglyLinkedListNode thirdLinkedListNode = new SinglyLinkedListNode() { Value = 7 };
             linkedList.AddLast(thirdLinkedListNode);
 
             //act
