@@ -1,8 +1,9 @@
-﻿using AlgorithmsAndDataStructuresPart1;
+﻿using System;
+using AlgorithmsAndDataStructuresPart1;
+using AlgorithmsAndDataStructuresPart1.LinkedLists;
 using NUnit.Framework;
-using System;
 
-namespace AlgorithmsAndDataStructuresPart1Tests
+namespace AlgorithmsAndDataStructuresPart1Tests.LinkedListsTests
 {
     [TestFixture]
     public class NodeChainTests

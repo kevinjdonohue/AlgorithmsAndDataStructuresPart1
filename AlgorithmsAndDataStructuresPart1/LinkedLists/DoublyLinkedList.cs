@@ -1,68 +1,73 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace AlgorithmsAndDataStructuresPart1
+namespace AlgorithmsAndDataStructuresPart1.LinkedLists
 {
-    public class SInglyLinkedList<T> : ICollection<T>
+    public class DoublyLinkedList<T>: ICollection<T>
     {
-        public SinglyLinkedListNode<T> Head { get; private set; }
-        public SinglyLinkedListNode<T> Tail { get; private set; }
+        public DoublyLinkedListNode<T> Head { get; private set; }
+        public DoublyLinkedListNode<T> Tail { get; private set; }
 
         public void AddFirst(T value)
         {
-            AddFirst(new SinglyLinkedListNode<T>(value));
+            AddFirst(new DoublyLinkedListNode<T>(value));
         }
 
-        public void AddFirst(SinglyLinkedListNode<T> node)
+        public void AddFirst(DoublyLinkedListNode<T> node)
         {
-            SinglyLinkedListNode<T> temp = Head;
+            DoublyLinkedListNode<T> previousHead = Head;
             Head = node;
-            Head.Next = temp;
+            Head.Next = previousHead;
             Count++;
 
             if (Count == 1)
             {
-                Tail = node;
+                Tail = Head;
+            }
+            else
+            {
+                previousHead.Previous = Head;
             }
         }
 
         public void AddLast(T value)
         {
-            AddLast(new SinglyLinkedListNode<T>(value));
+            AddLast(new DoublyLinkedListNode<T>(value));
         }
 
-        public void AddLast(SinglyLinkedListNode<T> node)
+        public void AddLast(DoublyLinkedListNode<T> newTail)
         {
             if (Count == 0)
             {
-                Head = node;
+                Head = newTail;
             }
 
             if (Count > 0)
             {
-                Tail.Next = node;
+                Tail.Next = newTail;
+                newTail.Previous = Tail;
             }
 
-            Tail = node;
-
+            Tail = newTail;
             Count++;
         }
 
-		public void RemoveFirst()
-		{
-			if (Count == 1)
-			{
-				Head = null;
-				Tail = null;
-			}
+        public void RemoveFirst()
+        {
+            if (Count == 1)
+            {
+                Head = null;
+                Tail = null;
+            }
 
-			if (Count > 1)
-			{
-				Head = Head.Next;
-			}
+            if (Count > 1)
+            {
+                Head = Head.Next;
+                Head.Previous = null;
+            }
 
-			Count--;
-		}
+            Count--;
+        }
 
         public void RemoveLast()
         {
@@ -74,16 +79,8 @@ namespace AlgorithmsAndDataStructuresPart1
 
             if (Count > 1)
             {
-                SinglyLinkedListNode<T> temp = Head;
-
-                while (temp.Next != Tail)
-                {
-                    temp = temp.Next;
-                }
-
-                temp.Next = null;
-
-                Tail = temp;
+                Tail.Previous.Next = null;
+                Tail = Tail.Previous;
             }
 
             Count--;
@@ -107,7 +104,7 @@ namespace AlgorithmsAndDataStructuresPart1
 
         public bool Contains(T item)
         {
-            SinglyLinkedListNode<T> current = Head;
+            DoublyLinkedListNode<T> current = Head;
 
             while (current != null)
             {
@@ -124,7 +121,7 @@ namespace AlgorithmsAndDataStructuresPart1
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            SinglyLinkedListNode<T> current = Head;
+            DoublyLinkedListNode<T> current = Head;
 
             while (current != null)
             {
@@ -135,8 +132,8 @@ namespace AlgorithmsAndDataStructuresPart1
 
         public bool Remove(T item)
         {
-            SinglyLinkedListNode<T> previous = null;
-            SinglyLinkedListNode<T> current = Head;
+            DoublyLinkedListNode<T> previous = null;
+            DoublyLinkedListNode<T> current = Head;
 
             while (current != null)
             {
@@ -147,18 +144,22 @@ namespace AlgorithmsAndDataStructuresPart1
                         //prev: 3
                         //current: 5
                         //next: 7
-                        // Before:  Head -> 3 -> 5 -> 7
-                        //After:    Head -> 3 ------> 7
+                        // Before:  Head -> 3 <-> 5 <-> 7 <-> null
+                        //After:    Head -> 3 <-------> 7 <-> null
                         previous.Next = current.Next;
 
                         //prev:  3
                         //current: 5
                         //next: null
-                        //Before:  Head -> 3 -> 5 -> null
-                        //After:   Head -> 3 ------> null
+                        //Before:  Head -> 3 <-> 5 <-> null
+                        //After:   Head -> 3 <-------> null
                         if (current.Next == null)
                         {
                             Tail = previous;
+                        }
+                        else
+                        {
+                            current.Next.Previous = previous;
                         }
 
                         Count--;
@@ -181,7 +182,7 @@ namespace AlgorithmsAndDataStructuresPart1
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
-            SinglyLinkedListNode<T> current = Head;
+            DoublyLinkedListNode<T> current = Head;
 
             while (current != null)
             {

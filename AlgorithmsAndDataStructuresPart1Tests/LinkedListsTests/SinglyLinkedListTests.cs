@@ -1,10 +1,11 @@
-﻿using AlgorithmsAndDataStructuresPart1;
+﻿using System;
+using System.Collections;
+using AlgorithmsAndDataStructuresPart1;
+using AlgorithmsAndDataStructuresPart1.LinkedLists;
 using FluentAssertions;
 using NUnit.Framework;
-using System;
-using System.Collections;
 
-namespace AlgorithmsAndDataStructuresPart1Tests
+namespace AlgorithmsAndDataStructuresPart1Tests.LinkedListsTests
 {
     [TestFixture]
     public class SinglyLinkedListTests

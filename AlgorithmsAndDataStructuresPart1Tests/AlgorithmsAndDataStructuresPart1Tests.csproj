@@ -68,8 +68,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SinglyLinkedListTests.cs" />
-    <Compile Include="NodeChainTests.cs" />
+    <Compile Include="LinkedListsTests\NodeChainTests.cs" />
+    <Compile Include="LinkedListsTests\SinglyLinkedListTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +83,9 @@
       <Project>{4F676D8D-A125-455C-BF95-863FCC59533E}</Project>
       <Name>AlgorithmsAndDataStructuresPart1</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StacksTests" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AlgorithmsAndDataStructuresPart1
+﻿namespace AlgorithmsAndDataStructuresPart1.LinkedLists
 {
 	public class DoublyLinkedListNode<T>
 	{
