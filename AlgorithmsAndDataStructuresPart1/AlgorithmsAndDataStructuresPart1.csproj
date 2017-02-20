@@ -45,9 +45,7 @@
     <Compile Include="LinkedLists\SInglyLinkedList.cs" />
     <Compile Include="LinkedLists\SinglyLinkedListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Stacks" />
+    <Compile Include="Stacks\LinkedListStack.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
