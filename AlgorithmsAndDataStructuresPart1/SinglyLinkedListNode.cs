@@ -1,8 +1,12 @@
 ﻿namespace AlgorithmsAndDataStructuresPart1
 {
-    public class SinglyLinkedListNode
+    public class SinglyLinkedListNode<T>
     {
-        public int Value { get; set; }
-        public SinglyLinkedListNode Next { get; set; }
+        public SinglyLinkedListNode(T value)
+        {
+            Value = value;
+        }
+        public T Value { get; set; }
+        public SinglyLinkedListNode<T> Next { get; set; }
     }
 }
